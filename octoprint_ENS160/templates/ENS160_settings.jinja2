@@ -1,0 +1,15 @@
+<h3>ENS160</h3>
+<label><span class="label label-info">Info:</span>
+        Name will be used as the graph legend.</label>
+<label><span class="label label-warning">Note:</span>
+        i2c addresses below should not include "0x".</label>
+<form class="form-horizontal">
+    <h4>{{ _('Configuration') }}</h4>
+    <div class="control-group">
+        <span class="control-label">{{ _('Sensors') }}</span>
+        <div class="controls">
+            <input type="text" class="input-block-level" data-bind="value: settings.plugins.ENS160.pin_configuration">
+            <span class="help-inline">Format: "name:i2c_address,name2:i2c_address2". e.g.: "External:40,Enclosure:41"</span>
+        </div>
+    </div>
+</form>

@@ -36,7 +36,7 @@ class ENS160Plugin(
         i2c = board.I2C()
         for name, pin in self.sensors.items():
             self.sensor_objects[name] = adafruit_ens160.ENS160(
-                i2c, pin
+                i2c, int(pin, 16)
             )
             # TODO: expose these as settings
             self.sensor_objects[name].temperature_compensation = 25

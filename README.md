@@ -2,7 +2,7 @@
 
 ![Screenshot of OctoPrint-ENS160 in action](extras/screenshot.png)
 
-Reads ENS160 sensors and adds the data to OctoPrint's temperature data.
+Enables OctoPrint integration of the ENS160 MOx air quality sensors.
 
 Data from this plugin will be automatically displayed with https://github.com/jneilliii/OctoPrint-PlotlyTempGraph.
 

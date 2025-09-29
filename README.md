@@ -55,6 +55,8 @@ e.g., "External:40,Enclosure:41"
 
 ### Plotly Temp Graph
 
+Data is automatically displayed in the Plotly Temp Graph plugin, but the layout can be optimized.
+
 Editing the OctoPrint config.yaml is the easiest as all options are not exposed in the UI.
 
 Relevant options are:

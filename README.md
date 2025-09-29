@@ -2,7 +2,7 @@
 
 ![Screenshot of OctoPrint-ENS160 in action](extras/screenshot.png)
 
-Enables OctoPrint integration of the ENS160 MOx air quality sensors.
+Enables OctoPrint integration of air quality data from ENS160 Digital Metal-Oxide Multi-Gas (https://www.sciosense.com/ens16x-digital-metal-oxide-multi-gas-sensor-family/) sensors.
 
 Data from this plugin will be automatically displayed with https://github.com/jneilliii/OctoPrint-PlotlyTempGraph.
 
@@ -135,3 +135,8 @@ Traceback (most recent call last):
                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 FileNotFoundError: [Errno 2] No such file or directory: '.lgd-nfy-3'
 ```
+
+## Links
+
+- ENS160 datasheet
+  - https://www.sciosense.com/wp-content/uploads/2023/12/ENS160-Datasheet.pdf

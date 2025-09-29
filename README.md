@@ -1,5 +1,7 @@
 # OctoPrint-ENS160
 
+![Screenshot of OctoPrint-ENS160 in action](extras/screenshot.png)
+
 Reads ENS160 sensors and adds the data to OctoPrint's temperature data.
 
 Data from this plugin will be automatically displayed with https://github.com/jneilliii/OctoPrint-PlotlyTempGraph.
@@ -44,10 +46,34 @@ pip3 install .`
 
 ## Configuration
 
+### ENS160 Plugin
+
 In OctoPrint, configure the plugin with the i2c ID's of your sensors.
 
 Format: "name:hex_address,name2:hex_address2"
 e.g., "External:40,Enclosure:41"
+
+### Plotly Temp Graph
+
+Editing the OctoPrint config.yaml is the easiest as all options are not exposed in the UI.
+
+Relevant options are:
+- 'use_sub_plot' (visible in the UI) which makes this series appear in a second upper graph.
+- 'hover_template' that hides the degrees C/F label.
+
+```yaml
+ plotlytempgraph:
+    _config_version: 5
+    max_graph_height: '300'
+    name_map:
+    ...
+    - color: '#4df444'
+      hover_template: <b>%{y:.0f}</b>
+      identifier: ens160_Enclosure_tvoc actual
+      label: enclosure_tvoc
+      use_sub_plot: true
+    ...
+```
 
 ## TODO
 

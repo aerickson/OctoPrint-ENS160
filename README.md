@@ -8,8 +8,7 @@ Data from this plugin will be automatically displayed with https://github.com/jn
 
 ## Recommended Hardware
 
-- Sensors
-  - ENS 160 sensor
+- ENS 160 sensors
     - Adafruit ENS160 MOX Gas Sensor (https://www.adafruit.com/product/5606)
     - SparkFun Indoor Air Quality Sensor - ENS160 (https://www.sparkfun.com/sparkfun-indoor-air-quality-sensor-ens160-qwiic.html)
 - OPTIONAL: I2C multiplexer

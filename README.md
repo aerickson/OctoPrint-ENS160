@@ -8,7 +8,7 @@ Data from this plugin will be automatically displayed with https://github.com/jn
 
 ## Recommended Hardware
 
-- ENS 160 sensors
+- ENS160 sensors
     - Adafruit ENS160 MOX Gas Sensor (https://www.adafruit.com/product/5606)
     - SparkFun Indoor Air Quality Sensor - ENS160 (https://www.sparkfun.com/sparkfun-indoor-air-quality-sensor-ens160-qwiic.html)
 - OPTIONAL: I2C multiplexer
@@ -76,11 +76,6 @@ Relevant options are:
     ...
 ```
 
-## TODO
-
-- Get listed on https://plugins.octoprint.org/.
-  - https://plugins.octoprint.org/help/registering/
-
 ## Troubleshooting
 
 ### LGPIO File not found
@@ -141,3 +136,9 @@ FileNotFoundError: [Errno 2] No such file or directory: '.lgd-nfy-3'
 
 - ENS160 datasheet
   - https://www.sciosense.com/wp-content/uploads/2023/12/ENS160-Datasheet.pdf
+
+## TODO
+
+- Get listed on https://plugins.octoprint.org/.
+  - https://plugins.octoprint.org/help/registering/
+- Query HTU31 sensors for humidity and temperature compensation (don't use static values).

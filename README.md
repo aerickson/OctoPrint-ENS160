@@ -76,6 +76,39 @@ Relevant options are:
     ...
 ```
 
+## Sensor Value Interpretation
+
+taken from https://wiki.dfrobot.com/SKU_SEN0537_ENS160_Air_Quality_Sensor_I2C
+
+### Air Quality Index (AQI) Reference
+
+| Level | Description        | Suggestion                                         | Recommended Stay Time      |
+|-------|--------------------|----------------------------------------------------|----------------------------|
+| 5     | Extremely bad      | In unavoidable circumstances, please strengthen ventilation | Not recommended to stay    |
+| 4     | Bad                | Strengthen ventilation, find sources of pollution  | Less than one month        |
+| 3     | Moderate           | Strengthen ventilation, close to the water source  | Less than 12 months        |
+| 2     | Good               | Maintain adequate ventilation                      | Suitable for long-term living |
+| 1     | Excellent          | No suggestion                                     | Suitable for long-term living |
+
+### eCO2/CO2 Concentration Reference
+
+| eCO2/CO2 (ppm) | Level     | Result/Suggestion                                 |
+|----------------|-----------|---------------------------------------------------|
+| >1500          | Terrible  | Indoor air pollution is serious / Ventilation is required |
+| 1000-1500      | Bad       | Indoor air is polluted / Ventilation is recommended |
+| 800-1000       | Moderate  | It is OK to ventilate                             |
+| 600-800        | Good      | Keep normal                                       |
+| 400-600        | Excellent | No suggestion                                     |
+
+### TVOC Concentration Reference
+
+| TVOC (ppb)     | Effects on Human Health           |
+|----------------|-----------------------------------|
+| >6000          | Headaches and nerve problems      |
+| 750-6000       | Restless and headache             |
+| 50-750         | Restless and uncomfortable        |
+| <50            | No effect                         |
+
 ## Troubleshooting
 
 ### LGPIO File not found

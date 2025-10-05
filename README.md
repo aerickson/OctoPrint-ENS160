@@ -176,3 +176,4 @@ FileNotFoundError: [Errno 2] No such file or directory: '.lgd-nfy-3'
 - Get listed on https://plugins.octoprint.org/.
   - https://plugins.octoprint.org/help/registering/
 - Query HTU31 sensors for humidity and temperature compensation (don't use static values).
+- If a sensor disappears, stop sending data (vs sending old data).

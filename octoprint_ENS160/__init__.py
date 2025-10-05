@@ -29,6 +29,9 @@ class ENS160Plugin(
             self.sensors = parse_sensor_config(
                 self._settings.get(["pin_configuration"])
             )
+            self.htu31_sensors = parse_sensor_config(
+                self._settings.get(["th_pin_configuration"])
+            )
         except ENS160ParseException as e:
             self._logger.error(
                 "on_after_startup: parse error when reading settings, exception: %s" % e
@@ -42,7 +45,10 @@ class ENS160Plugin(
             self.sensor_objects[name] = adafruit_htu31d.HTU31D(
                 i2c, int(pin, 16)
             )
+            # disable heater
+            self.sensor_objects[name].heater = False
 
+        # configure ens160 sensors
         for name, pin in self.sensors.items():
             self.sensor_objects[name] = adafruit_ens160.ENS160(
                 i2c, int(pin, 16)
@@ -70,7 +76,7 @@ class ENS160Plugin(
     def get_settings_defaults(self):
         self._logger.info("in get_settings_defaults")
         return dict(
-            debugging_enabled=False, pin_configuration="Enclosure:41,External:40", th_pin_configuration="52,53"
+            debugging_enabled=False, pin_configuration="Enclosure:41,External:40", th_pin_configuration="Enclosure:52,External:53"
         )
 
     def get_settings_restricted_paths(self):
@@ -93,6 +99,7 @@ class ENS160Plugin(
         # if there are htu31 sensors configured and present, update the calibration for the corresponding ens160 sensor
         for name, htu31_sensor in self.htu31_sensors.items():
             if name in self.sensor_objects:
+                # TODO: check that values are non-zero and not ''?
                 self._logger.debug(f"{name}: setting compensation: {htu31_sensor.temperature}C, {htu31_sensor.relative_humidity}%")
                 self.sensor_objects[name].temperature_compensation = htu31_sensor.temperature
                 self.sensor_objects[name].humidity_compensation = htu31_sensor.relative_humidity

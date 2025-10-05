@@ -13,13 +13,14 @@ authors = [
     {name = "Andrew J. Erickson", email = "aerickson@gmail.com"}
 ]
 dependencies = [
-	# "adafruit-blinka>=6.13.0", 
+    # "adafruit-blinka>=6.13.0",
     # "adafruit-circuitpython-ENS160d>=1.1.19",
     # "adafruit-platformdetect>=3.15.3",
     # "lgpio>=0.2.2.0",
     # "pexpect>=4.8.0",
     # "rpi-gpio>=0.7.1",
     "adafruit-circuitpython-ens160>=1.0.12",
+    "adafruit-circuitpython-htu31d>=1.1.19",
 ]
 [tool.setuptools]
 include-package-data = true

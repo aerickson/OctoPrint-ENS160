@@ -1,6 +1,7 @@
 # coding=utf-8
 from __future__ import absolute_import
 
+import adafruit_htu31d
 import adafruit_ens160
 import board
 
@@ -60,12 +61,12 @@ class ENS160Plugin(
     def get_settings_defaults(self):
         self._logger.info("in get_settings_defaults")
         return dict(
-            debugging_enabled=False, pin_configuration="Enclosure:41,External:40"
+            debugging_enabled=False, pin_configuration="Enclosure:41,External:40", th_pin_configuration="52,53"
         )
 
     def get_settings_restricted_paths(self):
         return dict(
-            admin=[["debugging_enabled"], ["pin_configuration"],], user=[], never=[]
+            admin=[["debugging_enabled"], ["pin_configuration"], ["th_pin_configuration"]], user=[], never=[]
         )
 
     def get_settings_version(self):
